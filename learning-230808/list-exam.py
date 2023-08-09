@@ -82,8 +82,6 @@ print(f"copy_list_1 -- {copy_list_1}")
 print(f"copy_list_2 -- {copy_list_2}")
 
 # deep copy case.2
-
-
 copy_list_3 = copy.deepcopy(copy_list_1)
 copy_list_3[0] = "반갑다리"
 print(f"copy_list_1 -- {copy_list_1}")
