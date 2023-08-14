@@ -132,3 +132,35 @@ for this_is_key in dict_type_2:
 
 for key, value in dict_type_2.items():
     print(f"dict_type_2, key -- {key}, value -- {value}")
+
+# _keys = dict_type_2["fruit"].keys()
+# _values = dict_type_2["fruit"].values()
+# print(f"_keys -- {_keys}")
+# print(f"_values -- {_values}")
+
+for __key in dict_type_2.keys():
+    print(f"_keys -- {__key}")
+
+for __value in dict_type_2.values():
+    print(f"__value -- {__value}")
+
+# 딕셔너리 업데이트
+fruit_cost_dict_1 = {"apple": 100, "cherry": 50}
+fruit_cost_dict_2 = {"apple": 5, "melon": 100}
+
+fruit_cost_dict_1.update(fruit_cost_dict_2)
+
+print(fruit_cost_dict_1)
+
+# 업데이트 대안책으로 in 절을 사용한다.
+if "apple" in fruit_cost_dict_1:
+    fruit_cost_dict_1["apple"] = 5000
+
+if "grape" not in fruit_cost_dict_1:
+    fruit_cost_dict_1["grape"] = 100
+
+print(fruit_cost_dict_1)
+
+# 딕셔너리 언패킹
+# for key, value in dict_type_2.items():
+#     print(f"dict_type_2, key -- {key}, value -- {value}")
