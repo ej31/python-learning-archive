@@ -164,3 +164,4 @@ print(fruit_cost_dict_1)
 # 딕셔너리 언패킹
 # for key, value in dict_type_2.items():
 #     print(f"dict_type_2, key -- {key}, value -- {value}")
+
