@@ -22,3 +22,5 @@ print(f"set_fruit_type_2 after remove -- {set_fruit_type_2}")
 
 set_fruit_type_2.discard("apple")
 print(f"set_fruit_type_2 after remove -- {set_fruit_type_2}")
+
+
