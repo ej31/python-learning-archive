@@ -1,0 +1,33 @@
+{
+  'manager': [
+    'John Smith',
+    '홍길동'
+  ],
+  'manager_lv': [
+    {
+      'admin': 100
+    },
+    {
+      'user_grade_1': 50
+    },
+    {
+      'user_grade_2': 80
+    }
+  ],
+  'person_name': '이강인',
+  'person_list': [
+    '히딩크',
+    '홍명보',
+    '황선홍'
+  ],
+  'others': {
+    'flag1': True,
+    'flag2': False,
+    'flag3': True,
+    'any_integer': [
+      1,
+      2,
+      3
+    ]
+  }
+}
