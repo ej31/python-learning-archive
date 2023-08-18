@@ -27,5 +27,10 @@ def 함수이름(매개변수1, 파라미터2):
     return "END!" + 매개변수1 + 파라미터2
 
 
+def 함수이름2(매개변수1, 파라미터2):
+    print("이 함수는 타지 않습니다.")
+    return None
+
+
 결과 = 함수이름("Hello", "Python!")
 print(결과)
