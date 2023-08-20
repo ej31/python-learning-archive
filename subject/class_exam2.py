@@ -1,5 +1,5 @@
 class ClassName:
-    def __init__(self, parameter1, parameter2, ...):
+    def __init__(self, parameter1, parameter2):
         # 초기화 메서드 (생성자)
         # 객체가 생성될 때 자동으로 호출되며, 속성 초기화 등의 작업을 수행
         self.parameter1 = parameter1
