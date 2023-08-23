@@ -1,0 +1,17 @@
+{
+  "key": {
+    "key2": [
+      {"key_in_array1": true},
+      {"key_in_array2": true},
+      {"key_in_array3": true}
+    ],
+    "key3": {
+      "key4": {
+        "key5": {
+
+        }
+      }
+    }
+
+  }
+}
