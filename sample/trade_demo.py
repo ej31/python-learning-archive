@@ -7,7 +7,7 @@ import urllib.request as req
 
 class RTMSService:
     def __init__(self):
-        self.__apikey = '6lO8Aosdue50f2MUKPk8aBNG1OAUsnxwJTEo3UiereoYuszDO%2FM5cz26NxRuHnaiL1W63PE2rRY%2Bh8DA6w1iJw%3D%3D'
+        self.__apikey = '본인 일반 인증키 (Encoding) 사용하시면 됩니다.'
 
     def do(self):
         try:
