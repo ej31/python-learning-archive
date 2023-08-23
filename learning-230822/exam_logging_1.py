@@ -1,11 +1,11 @@
-import logging
+import logging as log
 
 # 기본 로깅 설정 (로그 레벨을 WARNING으로 설정)
-logging.basicConfig(level=logging.WARNING)
+log.basicConfig(level=log.WARNING)
 
 # 다양한 로그 레벨의 메시지 기록
-logging.debug("This is a debug message")
-logging.info("This is an info message")
-logging.warning("This is a warning message")
-logging.error("This is an error message")
-logging.critical("This is a critical message")
+log.debug("This is a debug message")  # 0
+log.info("This is an info message")  # 1
+log.warning("This is a warning message")  # 2
+log.error("This is an error message")  # 3
+log.critical("This is a critical message")  # 4
