@@ -7,34 +7,35 @@ import urllib.request as req
 
 class RTMSService:
     def __init__(self):
-        self.__apikey = '본인 일반 인증키 (Encoding) 사용하시면 됩니다.'
+        self.__apikey = '일반인증키 (Encode) 서비스키를 입력해주세요'
 
     def do(self):
-        try:
-            self.getRTMSDataSvcAptTrade('41117', '202201', self.__apikey)
-            self.getRTMSDataSvcAptTrade('41117', '202202', self.__apikey)
-            file = "법정동코드 전체자료.txt"
-            code = pd.read_csv(file, sep='\t')
-            code = code[code['폐지여부'] == '존재']
+        # try:
+        self.getRTMSDataSvcAptTrade('41117', '202201', self.__apikey)
+        self.getRTMSDataSvcAptTrade('41117', '202202', self.__apikey)
+        file = "법정동코드 전체자료.txt"
+        code = pd.read_csv(file, sep='\t')
+        code = code[code['폐지여부'] == '존재']
 
-            gu = '영통구'  # 구 이름 입력
-            gu_code = code[code['법정동명'].str.contains(gu)]  # '법정동명'에 '영통구'가 포함된 데이터 찾기
-            gu_code = gu_code['법정동코드'].reset_index(drop=True)[0]  # '법정동코드' index를 reset후 첫번째 index선택
-            gu_code = gu_code[0:5]  # '법정동코드' 10자리 중 앞 5자리만 사용
+        gu = '영통구'  # 구 이름 입력
+        gu_code = code[code['법정동명'].str.contains(gu)]  # '법정동명'에 '영통구'가 포함된 데이터 찾기
+        gu_code = gu_code['법정동코드'].reset_index(drop=True)[0]  # '법정동코드' index를 reset후 첫번째 index선택
+        gu_code = gu_code[0:5]  # '법정동코드' 10자리 중 앞 5자리만 사용
 
-            year = [str("%04d" % y) for y in range(2011, 2023)]
-            month = [str("%02d" % m) for m in range(1, 13)]
-            yyyymm_list = ["%s%s" % (y, m) for y in year for m in month]
+        year = [str("%04d" % y) for y in range(2011, 2023)]
+        month = [str("%02d" % m) for m in range(1, 13)]
+        yyyymm_list = ["%s%s" % (y, m) for y in year for m in month]
 
-            Your_Key = self.__apikey
+        Your_Key = self.__apikey
 
-            aptTrade2 = pd.DataFrame()
-            for yyyymm in yyyymm_list:
-                temp2 = self.getRTMSDataSvcAptTrade(gu_code, yyyymm, Your_Key)
-                aptTrade2 = pd.concat([aptTrade2, temp2]).reset_index(drop=True)
-        except FeatureNotFound as e:
-            print(e)
-            print("API KEY가 없는 경우일 확률이 큼")
+        aptTrade2 = pd.DataFrame()
+        for yyyymm in yyyymm_list:
+            temp2 = self.getRTMSDataSvcAptTrade(gu_code, yyyymm, Your_Key)
+            aptTrade2 = pd.concat([aptTrade2, temp2]).reset_index(drop=True)
+
+    # except FeatureNotFound as e:
+    #     print(e)
+    #     print("API KEY가 없는 경우일 확률이 큼")
 
     @staticmethod
     def getRTMSDataSvcAptTrade(gu_code, yyyymm, serviceKey):
